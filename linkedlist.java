@@ -39,6 +39,7 @@ public class linkedlist {
 
         System.out.println(linkedlist.peekFirst());
         System.out.println(linkedlist.peekLast());
+        System.out.println(linkedlist.get(2));
 
     }
 }
