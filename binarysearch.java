@@ -7,8 +7,8 @@ public class binarysearch {
         // a targeted value within a sorted array.
         // half of the array is eliminated during each "step"
 
-        int[] array = new int[1000000];
-        int target = 77777;
+        int[] array = new int[10];
+        int target = 2;
 
         for(int i = 0; i<array.length;i++){
             array[i] = i;
