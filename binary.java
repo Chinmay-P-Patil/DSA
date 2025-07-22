@@ -23,5 +23,6 @@ public class binary {
 
         int newnumber = bitmas | x;
         System.out.println(newnumber);
+        System.out.println((3>>1)+ (3&1));
     }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BST {
     static class Node {
         int data;
@@ -103,8 +105,47 @@ public class BST {
        
     }
 
+    public static void printrange(Node root, int x, int y){
+        if(root == null){
+            return;
+        }
+        if(root.data >=x && root.data <= y){
+            printrange(root.left, x, y);
+            System.out.print(root.data + " ");
+            printrange(root.right, x, y);
+        }
+        else if(root.data>= y){
+            printrange(root.left, x, y);
+        }else{
+            printrange(root.right, x, y);
+        }
+    } 
+
+    static int i = 0;
+    public static ArrayList<String> roottoleaf(Node root, ArrayList<String> list){
+
+        if (root == null) {
+            
+            return list;
+
+        } else {
+            list.add(i,String.valueOf(root.data));
+            if(root.left == null && root.right == null){
+                i++;
+            }else{
+                roottoleaf(root.left,list);
+            roottoleaf(root.right,list);
+            }
+            
+            //list.remove(list.size()-1);
+        }
+        return list;
+
+    }
+
     public static void main(String[] args){
         int values[] = {5,1,3,4,2,7};
+        ArrayList<String> list = new ArrayList<>();
         Node root = null;
 
         for(int i = 0;i<values.length;i++){
@@ -116,5 +157,8 @@ public class BST {
         //delete(root, 10);
         inorder(root);
         System.out.println(rangesum(root, 2, 6));
+        printrange(root, 1, 6);
+        System.out.println();
+        System.out.println(roottoleaf(root, list));
     }
 }

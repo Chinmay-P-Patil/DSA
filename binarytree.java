@@ -120,6 +120,7 @@ public class binarytree {
         }
         System.out.println(list);
     }    
+    
     public static int countallnodes(Node root){
         if(root == null){
             return 0;
